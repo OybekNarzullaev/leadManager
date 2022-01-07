@@ -1,6 +1,8 @@
 import axios from "axios";
 import { createMessage } from "./messages";
 import { GET_LEADS, DELETE_LEAD, ADD_LEAD, GET_ERRORS } from "./types";
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "csrftoken";
 
 export const getLeads = () => (dispatch) => {
   axios
